@@ -4,10 +4,8 @@ using System.Linq;
 
 namespace ceg_auto;
 
-class Program
-{
-    static void Main(string[] args)
-    {
+class Program {
+    static void Main(string[] args) {
         Console.ReadKey();
     }
 }
