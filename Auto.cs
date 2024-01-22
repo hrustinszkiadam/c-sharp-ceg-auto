@@ -1,10 +1,10 @@
 namespace ceg_auto;
 
-class Auto (string nev, string soforNev, int soforPenz, int fogyasztas, int tankMeret, int benzinSzint): Sofor(soforNev, soforPenz) {
+class Auto (string nev, string soforNev, int soforPenz, int fogyasztas, int tankMeret, double benzinSzint): Sofor(soforNev, soforPenz) {
    public string Nev { get; set; } = nev;
    public int Fogyasztas { get; set; } = fogyasztas; // liter/100km
    public int TankMeret { get; set; } = tankMeret;
-   public int BenzinSzint { get; set; } = benzinSzint;
+   public double BenzinSzint { get; set; } = benzinSzint;
 
    public void Utazik(int km, Benzinkut kut) {
       int szuksegesBenzin = km * Fogyasztas / 100;
@@ -16,8 +16,8 @@ class Auto (string nev, string soforNev, int soforPenz, int fogyasztas, int tank
    }
 
    public void Tankol(Benzinkut kut) {
-      int liter = TankMeret - BenzinSzint;
-      int fizetendo = liter * kut.LiterAr;
+      double liter = TankMeret - BenzinSzint;
+      int fizetendo = (int)(kut.LiterAr * liter);
       if (SoforPenz < fizetendo) return;
       kut.Tankol(this, liter);
    }
