@@ -16,7 +16,7 @@ class Program {
 
         ceg.AutokElkuldese();
 
-        Console.WriteLine("A szimuláció véget ért.");
+        Console.WriteLine("A szimuláció sikeresen lefutott.");
 
         Console.ReadKey();
     }
